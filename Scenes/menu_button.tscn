@@ -1,0 +1,100 @@
+[gd_scene load_steps=12 format=3 uid="uid://cdjwvxr8qwii"]
+
+[ext_resource type="FontFile" uid="uid://cqnfwpcpshe82" path="res://Assets/Fonts/Monofonto.otf" id="1_vfee6"]
+[ext_resource type="StyleBox" uid="uid://dextm30jx0x4d" path="res://Assets/Styles/button_normal.tres" id="2_v2xew"]
+[ext_resource type="StyleBox" uid="uid://cxbc2jar3gda0" path="res://Assets/Styles/button_hover.tres" id="3_aheo5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p5756"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k2lk4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_aoske"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oerkf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jqpt1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b68rk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0x314"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n88hn"]
+
+[node name="MenuButton" type="CanvasLayer"]
+layer = 0
+
+[node name="RadioButton" type="Button" parent="."]
+offset_left = 27.0
+offset_top = 294.0
+offset_right = 79.0
+offset_bottom = 314.0
+theme_override_colors/font_color = Color(0.105882, 1, 0.501961, 1)
+theme_override_colors/font_pressed_color = Color(0.105882, 1, 0.501961, 1)
+theme_override_colors/font_hover_color = Color(0.105882, 1, 0.501961, 1)
+theme_override_colors/font_focus_color = Color(0.105882, 1, 0.501961, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.105882, 1, 0.501961, 1)
+theme_override_fonts/font = ExtResource("1_vfee6")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = ExtResource("2_v2xew")
+theme_override_styles/hover = ExtResource("3_aheo5")
+theme_override_styles/pressed = ExtResource("2_v2xew")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_p5756")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_k2lk4")
+text = "Radio"
+
+[node name="UtilityButton" type="Button" parent="."]
+offset_left = 89.0
+offset_top = 294.0
+offset_right = 157.0
+offset_bottom = 314.0
+theme_override_colors/font_color = Color(0.105882, 1, 0.501961, 1)
+theme_override_colors/font_pressed_color = Color(0.105882, 1, 0.501961, 1)
+theme_override_colors/font_hover_color = Color(0.105882, 1, 0.501961, 1)
+theme_override_colors/font_focus_color = Color(0.105882, 1, 0.501961, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.105882, 1, 0.501961, 1)
+theme_override_fonts/font = ExtResource("1_vfee6")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = ExtResource("2_v2xew")
+theme_override_styles/hover = ExtResource("3_aheo5")
+theme_override_styles/pressed = ExtResource("2_v2xew")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_aoske")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_oerkf")
+text = "Utility"
+
+[node name="SystemButton" type="Button" parent="."]
+offset_left = 167.0
+offset_top = 294.0
+offset_right = 229.0
+offset_bottom = 314.0
+theme_override_colors/font_color = Color(0.105882, 1, 0.501961, 1)
+theme_override_colors/font_pressed_color = Color(0.105882, 1, 0.501961, 1)
+theme_override_colors/font_hover_color = Color(0.105882, 1, 0.501961, 1)
+theme_override_colors/font_focus_color = Color(0.105882, 1, 0.501961, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.105882, 1, 0.501961, 1)
+theme_override_fonts/font = ExtResource("1_vfee6")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = ExtResource("2_v2xew")
+theme_override_styles/hover = ExtResource("3_aheo5")
+theme_override_styles/pressed = ExtResource("2_v2xew")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_jqpt1")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_b68rk")
+text = "System"
+
+[node name="HelpButton" type="Button" parent="."]
+offset_left = 239.0
+offset_top = 294.0
+offset_right = 283.0
+offset_bottom = 314.0
+theme_override_colors/font_color = Color(0.105882, 1, 0.501961, 1)
+theme_override_colors/font_pressed_color = Color(0.105882, 1, 0.501961, 1)
+theme_override_colors/font_hover_color = Color(0.105882, 1, 0.501961, 1)
+theme_override_colors/font_focus_color = Color(0.105882, 1, 0.501961, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.105882, 1, 0.501961, 1)
+theme_override_fonts/font = ExtResource("1_vfee6")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = ExtResource("2_v2xew")
+theme_override_styles/hover = ExtResource("3_aheo5")
+theme_override_styles/pressed = ExtResource("2_v2xew")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_0x314")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_n88hn")
+text = "Help"

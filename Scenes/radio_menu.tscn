@@ -1,0 +1,52 @@
+[gd_scene load_steps=4 format=3 uid="uid://btg4jqyd23td4"]
+
+[ext_resource type="Script" path="res://Scripts/freq_grid.gd" id="2_phmmq"]
+[ext_resource type="PackedScene" uid="uid://c7cjefloomliq" path="res://Scenes/main_layout.tscn" id="3_c4wgu"]
+[ext_resource type="FontFile" uid="uid://cqnfwpcpshe82" path="res://Assets/Fonts/Monofonto.otf" id="5_aljwa"]
+
+[node name="Radio" type="Node"]
+
+[node name="RadioDetail" type="Node" parent="."]
+
+[node name="RadioStation" type="Label" parent="RadioDetail"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -76.5
+offset_top = -97.0
+offset_right = 76.5
+offset_bottom = -71.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.105882, 1, 0.501961, 1)
+theme_override_fonts/font = ExtResource("5_aljwa")
+theme_override_font_sizes/font_size = 16
+text = "Diamond City Radio"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RadioFreq" type="Label" parent="RadioDetail"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -76.5
+offset_top = -68.0
+offset_right = 76.5
+offset_bottom = -42.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.105882, 1, 0.501961, 1)
+theme_override_fonts/font = ExtResource("5_aljwa")
+theme_override_font_sizes/font_size = 16
+text = "106.2 Mhz"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Grid" type="Node2D" parent="RadioDetail"]
+script = ExtResource("2_phmmq")
+
+[node name="MainLayout" parent="." instance=ExtResource("3_c4wgu")]

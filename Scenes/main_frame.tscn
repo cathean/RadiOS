@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://blna7x1wq17c7"]
+
+[node name="MainFrame" type="Node"]
+
+[node name="MenuFrame" type="Line2D" parent="."]
+points = PackedVector2Array(16, 250, 16, 304, 464, 304, 464, 250)
+width = 2.0
+default_color = Color(0.105882, 1, 0.501961, 1)
+antialiased = true
+
+[node name="TitleFrame" type="Line2D" parent="."]
+points = PackedVector2Array(16, 70, 16, 16, 222, 16, 222, 70)
+width = 2.0
+default_color = Color(0.105882, 1, 0.501961, 1)
+antialiased = true
+
+[node name="DateFrame" type="Line2D" parent="."]
+points = PackedVector2Array(225, 16, 350, 16, 350, 70)
+width = 2.0
+default_color = Color(0.105882, 1, 0.501961, 1)
+antialiased = true
+
+[node name="StatusFrame" type="Line2D" parent="."]
+points = PackedVector2Array(354, 16, 448, 16, 448, 70)
+width = 2.0
+default_color = Color(0.105882, 1, 0.501961, 1)
+antialiased = true

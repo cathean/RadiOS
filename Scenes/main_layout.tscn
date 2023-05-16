@@ -1,0 +1,177 @@
+[gd_scene load_steps=19 format=3 uid="uid://c7cjefloomliq"]
+
+[ext_resource type="PackedScene" uid="uid://blna7x1wq17c7" path="res://Scenes/main_frame.tscn" id="1_dlxm1"]
+[ext_resource type="PackedScene" uid="uid://btlpxng3rl22a" path="res://Scenes/status.tscn" id="2_vyqjm"]
+[ext_resource type="PackedScene" uid="uid://cww7ghpun1wda" path="res://Scenes/time_date.tscn" id="3_t53ag"]
+[ext_resource type="PackedScene" uid="uid://vocbstt4bn1l" path="res://Scenes/location.tscn" id="4_l5euv"]
+[ext_resource type="FontFile" uid="uid://bmoopi8wxheu" path="res://Assets/Fonts/BrushScript.otf" id="5_0bwe0"]
+[ext_resource type="FontFile" uid="uid://cqnfwpcpshe82" path="res://Assets/Fonts/Monofonto.otf" id="6_kbmgt"]
+[ext_resource type="StyleBox" uid="uid://dextm30jx0x4d" path="res://Assets/Styles/button_normal.tres" id="7_o3ra0"]
+[ext_resource type="StyleBox" uid="uid://cxbc2jar3gda0" path="res://Assets/Styles/button_hover.tres" id="8_1ckyl"]
+[ext_resource type="Shader" path="res://Assets/Shader/old_tv2.gdshader" id="9_cjf7f"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p5756"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k2lk4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_aoske"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oerkf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jqpt1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b68rk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0x314"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n88hn"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4dg4w"]
+shader = ExtResource("9_cjf7f")
+shader_parameter/overlay = true
+shader_parameter/scanlines_opacity = 0.1
+shader_parameter/scanlines_width = 0.25
+shader_parameter/grille_opacity = 0.25
+shader_parameter/resolution = Vector2(480, 320)
+shader_parameter/pixelate = false
+shader_parameter/roll = true
+shader_parameter/roll_speed = 4.0
+shader_parameter/roll_size = 91.313
+shader_parameter/roll_variation = 5.0
+shader_parameter/distort_intensity = 0.003
+shader_parameter/noise_opacity = 0.0
+shader_parameter/noise_speed = 3.0
+shader_parameter/static_noise_intensity = 0.06
+shader_parameter/aberration = 4.75e-08
+shader_parameter/brightness = 1.4
+shader_parameter/discolor = true
+shader_parameter/warp_amount = 0.4
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.3
+shader_parameter/vignette_opacity = 0.6
+
+[node name="MainLayout" type="Node"]
+
+[node name="MainFrame" parent="." instance=ExtResource("1_dlxm1")]
+
+[node name="Status" parent="MainFrame" instance=ExtResource("2_vyqjm")]
+position = Vector2(358, 23)
+
+[node name="TimeDate" parent="MainFrame" instance=ExtResource("3_t53ag")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 229.0
+offset_top = 20.0
+offset_right = 341.0
+offset_bottom = 43.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="Control" parent="MainFrame" instance=ExtResource("4_l5euv")]
+offset_left = 92.0
+offset_top = 18.0
+offset_right = -267.0
+offset_bottom = -279.0
+
+[node name="Title" type="Label" parent="MainFrame"]
+offset_left = 155.0
+offset_top = 131.0
+offset_right = 317.0
+offset_bottom = 188.0
+theme_override_colors/font_color = Color(0.105882, 1, 0.501961, 1)
+theme_override_fonts/font = ExtResource("5_0bwe0")
+theme_override_font_sizes/font_size = 42
+text = "Radio-Boy"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MenuButton" type="CanvasLayer" parent="."]
+layer = 0
+
+[node name="RadioButton" type="Button" parent="MenuButton"]
+offset_left = 27.0
+offset_top = 294.0
+offset_right = 79.0
+offset_bottom = 314.0
+theme_override_colors/font_color = Color(0.105882, 1, 0.501961, 1)
+theme_override_colors/font_pressed_color = Color(0.105882, 1, 0.501961, 1)
+theme_override_colors/font_hover_color = Color(0.105882, 1, 0.501961, 1)
+theme_override_colors/font_focus_color = Color(0.105882, 1, 0.501961, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.105882, 1, 0.501961, 1)
+theme_override_fonts/font = ExtResource("6_kbmgt")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = ExtResource("7_o3ra0")
+theme_override_styles/hover = ExtResource("8_1ckyl")
+theme_override_styles/pressed = ExtResource("7_o3ra0")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_p5756")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_k2lk4")
+text = "Radio"
+
+[node name="UtilityButton" type="Button" parent="MenuButton"]
+offset_left = 89.0
+offset_top = 294.0
+offset_right = 157.0
+offset_bottom = 314.0
+theme_override_colors/font_color = Color(0.105882, 1, 0.501961, 1)
+theme_override_colors/font_pressed_color = Color(0.105882, 1, 0.501961, 1)
+theme_override_colors/font_hover_color = Color(0.105882, 1, 0.501961, 1)
+theme_override_colors/font_focus_color = Color(0.105882, 1, 0.501961, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.105882, 1, 0.501961, 1)
+theme_override_fonts/font = ExtResource("6_kbmgt")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = ExtResource("7_o3ra0")
+theme_override_styles/hover = ExtResource("8_1ckyl")
+theme_override_styles/pressed = ExtResource("7_o3ra0")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_aoske")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_oerkf")
+text = "Utility"
+
+[node name="SystemButton" type="Button" parent="MenuButton"]
+offset_left = 167.0
+offset_top = 294.0
+offset_right = 229.0
+offset_bottom = 314.0
+theme_override_colors/font_color = Color(0.105882, 1, 0.501961, 1)
+theme_override_colors/font_pressed_color = Color(0.105882, 1, 0.501961, 1)
+theme_override_colors/font_hover_color = Color(0.105882, 1, 0.501961, 1)
+theme_override_colors/font_focus_color = Color(0.105882, 1, 0.501961, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.105882, 1, 0.501961, 1)
+theme_override_fonts/font = ExtResource("6_kbmgt")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = ExtResource("7_o3ra0")
+theme_override_styles/hover = ExtResource("8_1ckyl")
+theme_override_styles/pressed = ExtResource("7_o3ra0")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_jqpt1")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_b68rk")
+text = "System"
+
+[node name="HelpButton" type="Button" parent="MenuButton"]
+offset_left = 239.0
+offset_top = 294.0
+offset_right = 283.0
+offset_bottom = 314.0
+theme_override_colors/font_color = Color(0.105882, 1, 0.501961, 1)
+theme_override_colors/font_pressed_color = Color(0.105882, 1, 0.501961, 1)
+theme_override_colors/font_hover_color = Color(0.105882, 1, 0.501961, 1)
+theme_override_colors/font_focus_color = Color(0.105882, 1, 0.501961, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.105882, 1, 0.501961, 1)
+theme_override_fonts/font = ExtResource("6_kbmgt")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = ExtResource("7_o3ra0")
+theme_override_styles/hover = ExtResource("8_1ckyl")
+theme_override_styles/pressed = ExtResource("7_o3ra0")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_0x314")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_n88hn")
+text = "Help"
+
+[node name="Shader" type="CanvasLayer" parent="."]
+
+[node name="CRTShader" type="ColorRect" parent="Shader"]
+material = SubResource("ShaderMaterial_4dg4w")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2

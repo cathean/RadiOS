@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://btlpxng3rl22a"]
+
+[ext_resource type="Script" path="res://Scripts/battery.gd" id="1_8gy66"]
+[ext_resource type="Script" path="res://Scripts/wifi_signal.gd" id="2_gig53"]
+[ext_resource type="Script" path="res://Scripts/radio_type.gd" id="3_50e7v"]
+[ext_resource type="FontFile" uid="uid://cqnfwpcpshe82" path="res://Assets/Fonts/Monofonto.otf" id="4_44thd"]
+
+[node name="Status" type="Node2D"]
+
+[node name="Battery" type="Node2D" parent="."]
+script = ExtResource("1_8gy66")
+
+[node name="WifiSignal" type="Node2D" parent="."]
+script = ExtResource("2_gig53")
+
+[node name="RadioType" type="Label" parent="."]
+offset_top = -3.0
+offset_right = 30.0
+offset_bottom = 20.0
+size_flags_stretch_ratio = 0.0
+theme_override_colors/font_color = Color(0.105882, 1, 0.501961, 1)
+theme_override_fonts/font = ExtResource("4_44thd")
+theme_override_font_sizes/font_size = 16
+text = "FM"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Frame" type="Node2D" parent="RadioType"]
+script = ExtResource("3_50e7v")

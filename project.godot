@@ -10,8 +10,8 @@ config_version=5
 
 [application]
 
-config/name="RadiOS"
-run/main_scene="res://main_menu.tscn"
+config/name="Radi-OS"
+run/main_scene="res://Scenes/radio_menu.tscn"
 config/features=PackedStringArray("4.0", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -19,8 +19,10 @@ config/icon="res://icon.svg"
 
 window/size/viewport_width=480
 window/size/viewport_height=320
+window/size/resizable=false
 
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)
