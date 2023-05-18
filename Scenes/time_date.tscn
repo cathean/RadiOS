@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cww7ghpun1wda"]
+[gd_scene load_steps=3 format=3 uid="uid://cww7ghpun1wda"]
 
 [ext_resource type="FontFile" uid="uid://cqnfwpcpshe82" path="res://Assets/Fonts/Monofonto.otf" id="1_h7to7"]
+[ext_resource type="Script" path="res://Scripts/time_date.gd" id="2_b6q2g"]
 
 [node name="TimeDate" type="Label"]
 anchors_preset = 15
@@ -16,3 +17,4 @@ theme_override_font_sizes/font_size = 16
 text = "10.05.23, 3:24"
 horizontal_alignment = 2
 vertical_alignment = 1
+script = ExtResource("2_b6q2g")

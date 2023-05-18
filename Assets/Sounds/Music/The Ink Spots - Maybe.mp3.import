@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c7gh4hh4k31hb"
+path="res://.godot/imported/The Ink Spots - Maybe.mp3-7c476030972933027cf160584d6b752e.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sounds/Music/The Ink Spots - Maybe.mp3"
+dest_files=["res://.godot/imported/The Ink Spots - Maybe.mp3-7c476030972933027cf160584d6b752e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

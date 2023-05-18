@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://vocbstt4bn1l"]
+[gd_scene load_steps=3 format=3 uid="uid://vocbstt4bn1l"]
 
 [ext_resource type="FontFile" uid="uid://cqnfwpcpshe82" path="res://Assets/Fonts/Monofonto.otf" id="1_fitdk"]
+[ext_resource type="Script" path="res://Scripts/status_location.gd" id="2_e2vjm"]
 
 [node name="Location" type="Label"]
 anchors_preset = 15
@@ -16,3 +17,6 @@ theme_override_font_sizes/font_size = 16
 text = "Bandung"
 horizontal_alignment = 2
 vertical_alignment = 1
+script = ExtResource("2_e2vjm")
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]

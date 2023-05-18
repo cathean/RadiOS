@@ -1,14 +1,19 @@
-[gd_scene load_steps=19 format=3 uid="uid://c7cjefloomliq"]
+[gd_scene load_steps=25 format=3 uid="uid://c8dhcr0t7pp7n"]
 
 [ext_resource type="PackedScene" uid="uid://blna7x1wq17c7" path="res://Scenes/main_frame.tscn" id="1_dlxm1"]
 [ext_resource type="PackedScene" uid="uid://btlpxng3rl22a" path="res://Scenes/status.tscn" id="2_vyqjm"]
 [ext_resource type="PackedScene" uid="uid://cww7ghpun1wda" path="res://Scenes/time_date.tscn" id="3_t53ag"]
 [ext_resource type="PackedScene" uid="uid://vocbstt4bn1l" path="res://Scenes/location.tscn" id="4_l5euv"]
 [ext_resource type="FontFile" uid="uid://bmoopi8wxheu" path="res://Assets/Fonts/BrushScript.otf" id="5_0bwe0"]
+[ext_resource type="Script" path="res://Scripts/menu_button_manager.gd" id="6_k4fkb"]
 [ext_resource type="FontFile" uid="uid://cqnfwpcpshe82" path="res://Assets/Fonts/Monofonto.otf" id="6_kbmgt"]
 [ext_resource type="StyleBox" uid="uid://dextm30jx0x4d" path="res://Assets/Styles/button_normal.tres" id="7_o3ra0"]
 [ext_resource type="StyleBox" uid="uid://cxbc2jar3gda0" path="res://Assets/Styles/button_hover.tres" id="8_1ckyl"]
 [ext_resource type="Shader" path="res://Assets/Shader/old_tv2.gdshader" id="9_cjf7f"]
+[ext_resource type="Script" path="res://Scripts/audio_menu_static.gd" id="11_10wyg"]
+[ext_resource type="Script" path="res://Scripts/audio_menu_button.gd" id="11_hi4no"]
+[ext_resource type="Script" path="res://Scripts/crt_shader.gd" id="13_2uj7s"]
+[ext_resource type="Shader" path="res://Assets/Shader/old_tv3.gdshader" id="14_hotqq"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p5756"]
 
@@ -36,13 +41,37 @@ shader_parameter/resolution = Vector2(480, 320)
 shader_parameter/pixelate = false
 shader_parameter/roll = true
 shader_parameter/roll_speed = 4.0
-shader_parameter/roll_size = 91.313
+shader_parameter/roll_size = 90.0
 shader_parameter/roll_variation = 5.0
 shader_parameter/distort_intensity = 0.003
 shader_parameter/noise_opacity = 0.0
 shader_parameter/noise_speed = 3.0
 shader_parameter/static_noise_intensity = 0.06
 shader_parameter/aberration = 4.75e-08
+shader_parameter/brightness = 1.4
+shader_parameter/discolor = true
+shader_parameter/warp_amount = 0.4
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.3
+shader_parameter/vignette_opacity = 0.6
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_t2qa2"]
+shader = ExtResource("14_hotqq")
+shader_parameter/overlay = true
+shader_parameter/scanlines_opacity = 0.426
+shader_parameter/scanlines_width = 0.288
+shader_parameter/grille_opacity = 0.345
+shader_parameter/resolution = Vector2(480, 320)
+shader_parameter/pixelate = true
+shader_parameter/roll = true
+shader_parameter/roll_speed = 15.0
+shader_parameter/roll_size = 7.07
+shader_parameter/roll_variation = 5.0
+shader_parameter/distort_intensity = 0.2
+shader_parameter/noise_opacity = 0.132
+shader_parameter/noise_speed = 5.0
+shader_parameter/static_noise_intensity = 0.298
+shader_parameter/aberration = 0.475
 shader_parameter/brightness = 1.4
 shader_parameter/discolor = true
 shader_parameter/warp_amount = 0.4
@@ -68,13 +97,14 @@ offset_bottom = 43.0
 grow_horizontal = 1
 grow_vertical = 1
 
-[node name="Control" parent="MainFrame" instance=ExtResource("4_l5euv")]
+[node name="Location" parent="MainFrame" instance=ExtResource("4_l5euv")]
 offset_left = 92.0
 offset_top = 18.0
 offset_right = -267.0
 offset_bottom = -279.0
 
 [node name="Title" type="Label" parent="MainFrame"]
+visible = false
 offset_left = 155.0
 offset_top = 131.0
 offset_right = 317.0
@@ -88,6 +118,7 @@ vertical_alignment = 1
 
 [node name="MenuButton" type="CanvasLayer" parent="."]
 layer = 0
+script = ExtResource("6_k4fkb")
 
 [node name="RadioButton" type="Button" parent="MenuButton"]
 offset_left = 27.0
@@ -165,6 +196,12 @@ theme_override_styles/disabled = SubResource("StyleBoxEmpty_0x314")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_n88hn")
 text = "Help"
 
+[node name="AudioMenuButton" type="AudioStreamPlayer" parent="MenuButton"]
+script = ExtResource("11_hi4no")
+
+[node name="AudioMenuStatic" type="AudioStreamPlayer" parent="MenuButton"]
+script = ExtResource("11_10wyg")
+
 [node name="Shader" type="CanvasLayer" parent="."]
 
 [node name="CRTShader" type="ColorRect" parent="Shader"]
@@ -175,3 +212,23 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+script = ExtResource("13_2uj7s")
+
+[node name="CRTShader2" type="ColorRect" parent="Shader"]
+visible = false
+material = SubResource("ShaderMaterial_t2qa2")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[connection signal="mouse_entered" from="MenuButton/RadioButton" to="MenuButton" method="_on_radio_button_mouse_entered"]
+[connection signal="pressed" from="MenuButton/RadioButton" to="MenuButton" method="_on_radio_button_pressed"]
+[connection signal="mouse_entered" from="MenuButton/UtilityButton" to="MenuButton" method="_on_utility_button_mouse_entered"]
+[connection signal="pressed" from="MenuButton/UtilityButton" to="MenuButton" method="_on_utility_button_pressed"]
+[connection signal="mouse_entered" from="MenuButton/SystemButton" to="MenuButton" method="_on_system_button_mouse_entered"]
+[connection signal="pressed" from="MenuButton/SystemButton" to="MenuButton" method="_on_system_button_pressed"]
+[connection signal="mouse_entered" from="MenuButton/HelpButton" to="MenuButton" method="_on_help_button_mouse_entered"]
+[connection signal="pressed" from="MenuButton/HelpButton" to="MenuButton" method="_on_help_button_pressed"]
