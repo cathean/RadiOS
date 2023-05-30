@@ -1,7 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://btg4jqyd23td4"]
+[gd_scene load_steps=4 format=3 uid="uid://btg4jqyd23td4"]
 
 [ext_resource type="Script" path="res://Scripts/freq_grid.gd" id="2_phmmq"]
-[ext_resource type="PackedScene" uid="uid://c8dhcr0t7pp7n" path="res://Scenes/main_layout.tscn" id="3_c4wgu"]
 [ext_resource type="PackedScene" uid="uid://bobx15f4c2mmn" path="res://Scenes/radio_station.tscn" id="4_4453p"]
 [ext_resource type="FontFile" uid="uid://cqnfwpcpshe82" path="res://Assets/Fonts/Monofonto.otf" id="5_aljwa"]
 
@@ -49,7 +48,5 @@ vertical_alignment = 1
 
 [node name="Grid" type="Node2D" parent="RadioDetail"]
 script = ExtResource("2_phmmq")
-
-[node name="MainLayout" parent="." instance=ExtResource("3_c4wgu")]
 
 [node name="RadioStation" parent="." instance=ExtResource("4_4453p")]

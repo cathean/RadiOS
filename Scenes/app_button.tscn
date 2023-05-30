@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=3 uid="uid://u8djxuvhav5a"]
+
+[ext_resource type="FontFile" uid="uid://cqnfwpcpshe82" path="res://Assets/Fonts/Monofonto.otf" id="1_1yiip"]
+[ext_resource type="StyleBox" uid="uid://dextm30jx0x4d" path="res://Assets/Styles/button_normal.tres" id="2_vdiyd"]
+[ext_resource type="StyleBox" uid="uid://cxbc2jar3gda0" path="res://Assets/Styles/button_hover.tres" id="3_ydg8n"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v3kde"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xqk8j"]
+
+[node name="AppButton" type="Button"]
+theme_override_colors/font_color = Color(0.105882, 1, 0.501961, 1)
+theme_override_colors/font_pressed_color = Color(0.105882, 1, 0.501961, 1)
+theme_override_colors/font_hover_color = Color(0.105882, 1, 0.501961, 1)
+theme_override_colors/font_focus_color = Color(0.105882, 1, 0.501961, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.105882, 1, 0.501961, 1)
+theme_override_fonts/font = ExtResource("1_1yiip")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = ExtResource("2_vdiyd")
+theme_override_styles/hover = ExtResource("3_ydg8n")
+theme_override_styles/pressed = ExtResource("2_vdiyd")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_v3kde")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_xqk8j")
+text = "Application"

@@ -1,0 +1,34 @@
+[gd_scene load_steps=2 format=3 uid="uid://cvr216w1q0qag"]
+
+[ext_resource type="PackedScene" uid="uid://u8djxuvhav5a" path="res://Scenes/app_button.tscn" id="1_pa5lj"]
+
+[node name="Utility" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = 16.0
+offset_top = 64.0
+offset_right = 222.0
+offset_bottom = 288.0
+
+[node name="AppButton" parent="VBoxContainer" instance=ExtResource("1_pa5lj")]
+layout_mode = 2
+
+[node name="AppButton2" parent="VBoxContainer" instance=ExtResource("1_pa5lj")]
+layout_mode = 2
+
+[node name="AppButton3" parent="VBoxContainer" instance=ExtResource("1_pa5lj")]
+layout_mode = 2
+
+[node name="AppButton4" parent="VBoxContainer" instance=ExtResource("1_pa5lj")]
+layout_mode = 2
+
+[node name="AppButton5" parent="VBoxContainer" instance=ExtResource("1_pa5lj")]
+layout_mode = 2
+
+[node name="AppButton6" parent="VBoxContainer" instance=ExtResource("1_pa5lj")]
+layout_mode = 2
+
+[node name="VScrollBar" type="VScrollBar" parent="VBoxContainer"]
+layout_mode = 2
